@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+
+</head>
+
+
+<body>
+    
+<h1>Which property is used to change the background color?</h1>
+
+
+
+<form action="q5.html">
+<input type="radio" name="q4" id="false" value="color">
+
+<label for="q2">color</label>
+
+
+<br>
+<input type="radio" name="q4" id="true" value="background-color">
+
+<label for="q2">background-color</label>
+<br>
+<input type="submit" value="next" onclick="q4click()">
+
+
+</form>
+
+<br>
+
+<!-- Replace 10 with the seconds you want to count down from -->
+<span id="countdown">10</span> second<span id="plural">s</span>
+
+
+
+
+
+
+
+
+<script>
+
+
+    var r1=document.getElementById("true").value;
+    var r2=document.getElementById("false").value;
+    
+    function q4click(){
+    if(r1.checked){
+    
+    localStorage.setItem("q4","correct");
+
+    }
+    else if(r2.checked)
+    {
+    localStorage.setItem("q4","wronge");
+    console.log(localStorage.getItem("q4"));
+    
+    }
+    else
+    
+    localStorage.setItem("q4","no answer");
+    
+    }
+    
+    
+    
+    
+    
+    var seconds = document.getElementById("countdown").textContent;
+    var countdown = setInterval(function(){
+        seconds--;
+        (seconds == 1) ? document.getElementById("plural").textContent = "" : document.getElementById("plural").textContent = "s";
+        document.getElementById("countdown").textContent = seconds;
+        if (seconds <= 0){
+            
+    
+    
+            localStorage.setItem("q4","no answer")
+    
+            window.location.replace("q5.html");
+              
+        setTimeout("pageRedirect()", 1000);
+            
+            clearInterval(countdown);
+
+    
+    
+    
+        }
+        
+        
+        
+        
+        },1000);
+    </script>
+
+
+</body>
+<html>

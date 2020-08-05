@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+
+</head>
+
+
+<body>
+    
+<h1>Where in an HTML document is the correct place to refer to an external style sheet?</h1>
+
+
+
+<form action="q4.html">
+<input type="radio" name="q3" id="true" value="head section">
+
+<label for="q2">head section</label>
+
+
+<br>
+<input type="radio" name="q3"  id="false" value="body section">
+
+<label for="q2">body section</label>
+<br>
+<input type="submit" value="next" onclick="q3click()">
+
+
+</form>
+
+<br>
+
+<!-- Replace 10 with the seconds you want to count down from -->
+<span id="countdown">10</span> second<span id="plural">s</span>
+
+
+<script>
+
+
+    var r1=document.getElementById("true").value;
+    var r2=document.getElementById("false").value;
+    
+    function q3click(){
+    if(r1.checked){
+    
+    localStorage.setItem("q3","correct");
+   }
+    else if(r2.checked)
+    {
+    localStorage.setItem("q3","wronge");
+
+    }
+    else
+    
+    localStorage.setItem("q3","no answer");
+    
+    }
+    
+    
+    
+    
+    
+    var seconds = document.getElementById("countdown").textContent;
+    var countdown = setInterval(function(){
+        seconds--;
+        (seconds == 1) ? document.getElementById("plural").textContent = "" : document.getElementById("plural").textContent = "s";
+        document.getElementById("countdown").textContent = seconds;
+        if (seconds <= 0){
+            
+    
+    
+            localStorage.setItem("q3","no answer")
+    
+            window.location.replace("q4.html");
+              
+        setTimeout("pageRedirect()", 1000);
+            
+            clearInterval(countdown);
+    
+
+    
+    
+        }
+        
+        
+        
+        
+        },1000);
+    </script>
+
+
+
+
+
+
+
+
+
+
+</body>
+<html>

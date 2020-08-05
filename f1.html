@@ -1,0 +1,39 @@
+<!doctype html >
+
+
+<html>
+<head>
+</head>
+
+
+<dody>
+
+<h1>enter your name </h1>
+
+
+
+<form action="q1.html">
+<label for="name">name:</label>
+<input type="text" id="name" placeholder="name">
+<input type="submit" name="submit" value="start quiz" onclick="fun1()">
+</form>
+
+<script>
+
+function fun1(){
+
+
+var name =document.getElementById("name").value;
+
+localStorage.setItem("name",name);
+console.log(localStorage.getItem("name"));
+
+
+
+}
+
+</script>
+
+</dody>
+
+</html>

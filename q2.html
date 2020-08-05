@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+
+</head>
+
+
+<body>
+    
+<h1>What does CSS stand for?</h1>
+
+
+
+<form  action="q3.html">
+<input type="radio" name="q2" id="true" value="cascading style sheet">
+
+<label for="q2">cascading style sheet</label>
+
+
+<br>
+<input type="radio" name="q2" id="false" value="computer style sheet">
+
+<label for="q2">computer style sheet</label>
+<br>
+<input type="submit" value="next" onclick="q2click()">
+
+
+</form>
+
+
+<br>
+
+<!-- Replace 10 with the seconds you want to count down from -->
+<span id="countdown">10</span> second<span id="plural">s</span>
+
+<script>
+
+
+    var r1=document.getElementById("true").value;
+    var r2=document.getElementById("false").value;
+    
+    function q2click(){
+    if(r1.checked){
+    
+    localStorage.setItem("q2","correct");
+
+    }
+    else if(r2.checked)
+    {
+    localStorage.setItem("q2","wronge");
+    
+    
+    }
+    else
+    
+    localStorage.setItem("q2","no answer");
+    
+    }
+    
+    
+    
+    
+    
+    var seconds = document.getElementById("countdown").textContent;
+    var countdown = setInterval(function(){
+        seconds--;
+        (seconds == 1) ? document.getElementById("plural").textContent = "" : document.getElementById("plural").textContent = "s";
+        document.getElementById("countdown").textContent = seconds;
+        if (seconds <= 0){
+            
+    
+    
+            localStorage.setItem("q2","no answer")
+    
+            window.location.replace("q3.html");
+              
+        setTimeout("pageRedirect()", 1000);
+            
+            clearInterval(countdown);
+
+    
+    
+    
+        }
+        
+        
+        
+        
+        },1000);
+    </script>
+</body>
+<html>
